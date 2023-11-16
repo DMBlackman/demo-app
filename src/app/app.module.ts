@@ -10,14 +10,14 @@ import { VehiclesService } from './data/vehicles.service';
 import { PlanetsService } from './data/planets.service';
 import { PlanetsComponent } from './data/planets.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { PopupComponent } from './popup/popup.component';
+import { CommonModule } from '@angular/common';
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, DataComponent, VehiclesComponent, PlanetsComponent, PopupComponent],
-  imports: [BrowserModule, NoopAnimationsModule],
+  declarations: [AppComponent, DataComponent, VehiclesComponent, PlanetsComponent ],
+  imports: [BrowserModule, NoopAnimationsModule, CommonModule],
   providers: [PersonService, VehiclesService, PlanetsService],
   bootstrap: [AppComponent],
 })

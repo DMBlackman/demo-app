@@ -2,6 +2,7 @@
 
 import { Component, AfterViewInit } from '@angular/core';
 import { VehiclesService } from './vehicles.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-vehicles',
