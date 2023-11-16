@@ -1,0 +1,43 @@
+<!-- src/app/shared/vehicle.component.html -->
+
+<div class="container">
+    <div class="column">
+        <h2>Star Wars Planets</h2>
+        <table *ngIf="planets$ | async as data">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>rotation_period</th>
+                    <th>orbital_period</th>
+                    <th>diameter</th>
+                    <th>climate</th>
+                    <th>gravity</th>
+                    <th>terrain</th>
+                    <th>surface_water</th>
+                    <th>population</th>
+
+                    <!-- Add more headers based on the structure of the data -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let planet of data.results; let even = even"
+                    [ngClass]="{ 'even-row': even, 'odd-row': !even }">
+                    <td>{{ planet.name }}</td>
+                    <td>{{ planet.rotation_period }}</td>
+                    <td>{{ planet.orbital_period }}</td>
+                    <td>{{ planet.diameter }}</td>
+                    <td>{{ planet.climate }}</td>
+                    <td>{{ planet.gravity }}</td>
+                    <td>{{ planet.terrain }}</td>
+                    <td>{{ planet.surface_water }}</td>
+                    <td>{{ planet.population }}</td>
+                    <!-- Add more cells based on the structure of the data -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="column">
+        <!-- Add content for the second column if needed -->
+    </div>
+</div>

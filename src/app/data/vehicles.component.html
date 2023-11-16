@@ -1,0 +1,42 @@
+<!-- src/app/shared/vehicle.component.html -->
+
+<div class="container">
+    <div class="column">
+        <h2>Star Wars Vehicles</h2>
+        <table *ngIf="vehicles$ | async as data">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Model</th>
+                    <th>Manufacturer</th>
+                    <th>cost_in_credits</th>
+                    <th>length</th>
+                    <th>max_atmosphering_speed</th>
+                    <th>crew</th>
+                    <th>passengers</th>
+                    <th>cargo_capacity</th>
+                    <!-- Add more headers based on the structure of the data -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let vehicle of data.results; let even = even"
+                    [ngClass]="{ 'even-row': even, 'odd-row': !even }">
+                    <td>{{ vehicle.name }}</td>
+                    <td>{{ vehicle.model }}</td>
+                    <td>{{ vehicle.manufacturer }}</td>
+                    <td>{{ vehicle.cost_in_credits }}</td>
+                    <td>{{ vehicle.length }}</td>
+                    <td>{{ vehicle.max_atmosphering_speed }}</td>
+                    <td>{{ vehicle.crew }}</td>
+                    <td>{{ vehicle.model }}</td>
+                    <td>{{ vehicle.passengers }}</td>
+                    <!-- Add more cells based on the structure of the data -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="column">
+        <!-- Add content for the second column if needed -->
+    </div>
+</div>
